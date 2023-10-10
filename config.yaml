@@ -66,12 +66,14 @@ params:
     imageHeight: 120
     imageTitle: Me!
     buttons:
-      - name: About
+      - name: Who am I?
         url: about
       - name: Projects
         url: projects
       - name: Posts
         url: posts
+      - name: Books & Films
+        url: media
 
   # home-info mode
   homeInfoParams:
@@ -144,10 +146,15 @@ menu:
       name: posts
       url: /posts/
       weight: 4
+    - identifier: books & films
+      name: books & films
+      url: /media/
+      weight: 5
     - identifier: search
       name: archive 🔍
       url: /archive/
-      weight: 5
+      weight: 6
     - identifier: newsletter
       name: newsletter
       url: https://email.shivan.xyz
+      weight: 7
