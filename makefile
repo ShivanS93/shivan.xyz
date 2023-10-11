@@ -1,10 +1,14 @@
-.PHONY: drafts
-drafts:
-	rg 'draft: true' content/posts | fzf --layout=reverse --preview=bat
+.PHONY: new-post
+new-post:
+	hugo new --kind post-bundle posts/$(SLUG)
 
-.PHONY: new
-new:
-	hugo new --kind post-bundle posts/$(POST)
+.PHONY: new-book
+new-book:
+	hugo new --kind book-bundle media/books/$(SLUG)
+
+.PHONY: new-film
+new-film:
+	hugo new --kind film-bundle media/films/$(SLUG)
 
 .PHONY: preview
 preview:

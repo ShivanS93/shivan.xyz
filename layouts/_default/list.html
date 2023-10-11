@@ -3,7 +3,6 @@ partial "index_profile.html" . }} {{- else }} {{/* if not profileMode */}} {{-
 if not .IsHome | and .Title }}
 <header class="page-header">
   {{- partial "breadcrumbs.html" . }}
-  Categories
   <h1>
     {{ .Title }} {{- if and (or (eq .Kind `term`) (eq .Kind `section`)) (.Param
     "ShowRssButtonInSectionTermList") }}
@@ -28,6 +27,8 @@ if not .IsHome | and .Title }}
   {{- if .Description }}
   <div class="post-description">{{ .Description | markdownify }}</div>
   {{- end }}
+  <!-- TODO: Categories -->
+  TODO: Add categories
 </header>
 {{- end }} {{- if .Content }}
 <div class="post-content">
@@ -56,13 +57,21 @@ if $term }} {{- $class = "post-entry tag-entry" }} {{- end }}
       >{{- end }}
     </h2>
   </header>
-  {{- if (ne (.Param "hideSummary") true) }}
+  Categories {{- if (ne (.Param "hideSummary") true) }}
   <div class="entry-content">
     <p>
       {{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}
     </p>
   </div>
   {{- end }} {{- if not (.Param "hideMeta") }}
+  <!-- FIXME -->
+  <!-- Add tags -->
+  {{- $tags := .Params.Taxonomies.tag | default "tags" }}
+  <ul class="post-tags">
+    {{- range ($.GetTerms $tags) }}
+    <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+    {{- end }}
+  </ul>
   <footer class="entry-footer">{{- partial "post_meta.html" . -}}</footer>
   {{- end }}
   <a

@@ -107,8 +107,8 @@ params:
     hidden: false # hide everywhere but not in structured data
     hiddenInList: false # hide on list pages and home
     hiddenInSingle: false # hide on single page
-    responsiveImages: false
-    linkFullImages: false
+    responsiveImages: true
+    linkFullImages: true
 
   editPost:
     URL: "https://github.com/shivan-s/shivan.xyz/tree/main/content"
