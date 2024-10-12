@@ -2,7 +2,7 @@
 baseURL: "https://shivan.xyz/"
 languageCode: "en-us"
 title: "Shivan Sivakumaran"
-theme: "PaperMod"
+theme: "optom-code"
 paginate: 7
 defaultContentLanguage: en
 
